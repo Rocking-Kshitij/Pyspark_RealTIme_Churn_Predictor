@@ -1,0 +1,37 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+
+# Environment/config files
+.env
+*.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Git & IDE
+.git/
+.gitignore
+*.swp
+.idea/
+.vscode/
+
+# Model or data files (if any)
+*.joblib
+*.pkl
+*.parquet
+*.csv
+
+
+#others
+readme.txt

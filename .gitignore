@@ -1,0 +1,33 @@
+# Ignore documentation folder
+docs/
+
+# Ignore Python cache directories
+__pycache__/
+*/__pycache__/
+
+# Ignore environment variable files
+.env
+*/.env
+
+# Ignore temporary files
+temp.txt
+
+# Ignore virtual environment folders
+venv/
+*/venv/
+
+# Ignore s3 bucket data
+s3_bucket_data/
+*/s3_bucket_data/
+
+# Ignore MLflow runs
+mlruns/
+*/mlruns/
+
+
+*/readme*
+
+*/*.db
+*/*.joblib
+
+*/directory_structure.txt
