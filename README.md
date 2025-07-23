@@ -1,10 +1,10 @@
-# ChurnPredictor 🚀
+# ChurnPredictor
 
 This project simulates a real-world customer churn prediction system using modern data engineering and MLOps tools. It's built in modular steps — from event simulation to deployment — making it easy to extend or integrate into larger systems.
 
 ---
 
-## 🧩 Components
+## Components
 
 ### 1. Kafka Stream Simulator
 - **Stack:** Kafka, Python
