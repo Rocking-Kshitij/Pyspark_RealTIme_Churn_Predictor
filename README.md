@@ -1,59 +1,37 @@
-﻿# Pyspark_RealTIme_Churn_Predictor
+# ChurnPredictor 🚀
 
-
-# ChurnPredictor
-
-ChurnPredictor is an end-to-end machine learning pipeline designed to predict customer churn using real-time simulated events, scalable data processing, and containerized model deployment. This project demonstrates the integration of modern data engineering and MLOps tools to build, track, and serve a predictive model effectively.
+This project simulates a real-world customer churn prediction system using modern data engineering and MLOps tools. It's built in modular steps — from event simulation to deployment — making it easy to extend or integrate into larger systems.
 
 ---
 
-## 🔁 1. Kafka Stream Simulator
+## 🧩 Components
 
-**Tech Stack**: Kafka, Python, JSON  
-**Description**:  
-A lightweight Kafka event simulator is used to produce and consume synthetic user behavior data in JSON format. This mimics real-time streaming activity such as logins, clicks, and usage patterns.
+### 1. Kafka Stream Simulator
+- **Stack:** Kafka, Python
+- **What it does:** Simulates real-time user event streams using Kafka. Producers generate JSON events; consumers process them downstream.
 
-- Simulates event-driven architecture.
-- Customizable JSON payloads for extensible event types.
-- Python scripts for both producer and consumer roles.
+### 2. PySpark Data Pipeline (Databricks)
+- **Stack:** PySpark on Databricks
+- **What it does:** Reads Kafka events, performs cleaning & feature engineering, and writes a processed feature store to S3.
 
----
+### 3. Model Training with MLflow
+- **Stack:** Scikit-learn, MLflow, DVC
+- **What it does:** Trains a churn prediction model. All experiments, metrics, and artifacts are tracked with MLflow. Dataset versions managed using DVC.
 
-## 🔄 2. PySpark Data Pipeline on Databricks
-
-**Tech Stack**: PySpark, Databricks, AWS S3  
-**Description**:  
-A PySpark-based ETL pipeline running on Databricks ingests raw event data, applies feature engineering, and writes the curated dataset to a feature store in Amazon S3.
-
-- Handles missing values, aggregates user activity, encodes categorical fields.
-- Built to scale for large streaming datasets.
-- Outputs a clean, partitioned Parquet dataset for downstream modeling.
+### 4. FastAPI Model Deployment (Dockerized)
+- **Stack:** FastAPI, Docker
+- **What it does:** Serves the trained model through a lightweight REST API — great for local testing or integration with frontends.
 
 ---
 
-## 🤖 3. Model Training with MLflow
+## ⚙️ Getting Started
 
-**Tech Stack**: Scikit-learn, MLflow, DVC  
-**Description**:  
-The model training workflow leverages MLflow for experiment tracking and DVC for dataset versioning. A binary classification model is trained to predict churn probability.
+Each folder has its own `README.md` with setup instructions.
 
-- Hyperparameter tuning and cross-validation.
-- All metrics (AUC, precision, recall) logged to MLflow.
-- Best model version is registered and ready for deployment.
+To run the full pipeline locally, you'd typically:
+1. Start Kafka and simulate events.
+2. Run the Spark job on Databricks, it will process and store on s3 bucket.
+3. Train and track the model using `train.py`.
+4. Build and run the FastAPI app via Docker.
 
----
-
-## 🚀 4. FastAPI Model Deployment (Dockerized)
-
-**Tech Stack**: FastAPI, Docker  
-**Description**:  
-The final trained model is served through a FastAPI RESTful API inside a Docker container. This microservice enables predictions on new customer data in real-time.
-
-- Accepts JSON input and returns churn probabilities.
-- Lightweight and containerized for portability.
-- Swagger UI documentation for easy interaction.
-
----
-
-## 📁 Project Structure
 
