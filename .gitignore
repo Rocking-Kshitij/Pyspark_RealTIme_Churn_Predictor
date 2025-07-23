@@ -31,3 +31,4 @@ mlruns/
 */*.joblib
 
 */directory_structure.txt
+.gitignore
