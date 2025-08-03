@@ -26,8 +26,6 @@ This project simulates a real-world customer churn prediction system using moder
 
 ## Getting Started
 
-Each folder has its own `README.md` with setup instructions.
-
 To run the full pipeline locally, you'd typically:
 1. Start Kafka and simulate events.
 2. Run the Spark job on Databricks, it will process and store on s3 bucket.
