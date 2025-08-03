@@ -24,7 +24,7 @@ This project simulates a real-world customer churn prediction system using moder
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 Each folder has its own `README.md` with setup instructions.
 
